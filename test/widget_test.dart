@@ -17,14 +17,12 @@ void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
 
-    final ooo = ChikyuSignLessSession();
-    await ooo.login("", "");
-    var jjj = 0;
-    var state = ListPageState(ooo);
+    final session = ChikyuSignLessSession();
+    await session.login("", "");
+    var state = ListPageState(session);
     await state.getList();
-    var aaa = await ooo.callChikyApi("/entity/prospects/list", {"page_index":1, "items_per_page": 5});
-    final hjh = aaa.data;
-    /*
+    var api_res = await ooo.callChikyApi("/entity/prospects/list", {"page_index":1, "items_per_page": 5});
+    final list_prospect_res_data = api_res.data;
     await tester.pumpWidget(MyApp());
 
 

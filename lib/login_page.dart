@@ -19,7 +19,6 @@ class LoginPage extends StatelessWidget {
               onPressed: () => loginstate
                       .login('myuseremail', 'mypassword')
                       .then((f) {
-                    var aa = 0;
                     Navigator.of(context).pushNamed('/second');
                   }),
               child: const Text('ログイン'),

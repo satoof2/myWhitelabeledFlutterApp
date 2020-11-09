@@ -17,14 +17,14 @@ ListPageState(this.chikyuSession);
     } else {
       return chikyuSession.callChikyApi('/entity/prospects/list',
           {'page_index': 1, 'items_per_page': 5}).then((chikyuApiResponseData) {
-        final hjh = chikyuApiResponseData.data;
-        final ddd = hjh['list'];
-        final lll = ddd[0];
-        var kkkk = [];
-        kkkk.add(lll['__display_name']);
-        kkkk.add(ddd[1]["__display_name"]);
-        kkkk.add(ddd[2]["__display_name"]);
-        listingRecords = kkkk;
+        final hjrh = chikyuApiResponseData.data;
+        final prospects_list = hjh['list'];
+        final prospect = prospects_list[0];
+        var display_names = [];
+        display_names.add(prospect['__display_name']);
+        display_names.add(prospect[1]["__display_name"]);
+        display_names.add(prospect[2]["__display_name"]);
+        listingRecords = display_names;
         hasFetched = true;
         myNotifyListeners();
       });

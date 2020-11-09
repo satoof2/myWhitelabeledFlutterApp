@@ -179,8 +179,4 @@ class ChikyuSignLessSession extends ChikyuSessionInterface {
       return ChikyuApiResponseData(hasError, message, data);
     });
   }
-
-  List<int> aa() {
-    return [1];
-  }
 }
